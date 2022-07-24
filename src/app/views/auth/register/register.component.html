@@ -30,7 +30,7 @@
           <div class="text-blueGray-400 text-center mb-3 font-bold">
             <small>Or sign up with credentials</small>
           </div>
-          <form>
+          <form [formGroup]="registerForm">
             <div class="relative w-full mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -38,11 +38,27 @@
               >
                 Name
               </label>
-              <input
-                type="email"
+              <input 
+              formControlName="name"
+                type="email" [ngClass]="{'border-2 border-red': submitted && f.name.errors && !nameFocus}" (focus)="nameFocus=true" (blur)="nameFocus=false"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Name"
               />
+            </div>
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+                Gender
+              </label>
+              <select name="gender" formControlName="gender" [ngClass]="{'border-2 border-red': submitted && f.gender.errors && !genderFocus}" (focus)="genderFocus=true" (blur)="genderFocus=false"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                <option value="" selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">other</option>
+              </select>
             </div>
 
             <div class="relative w-full mb-3">
@@ -53,7 +69,7 @@
                 Email
               </label>
               <input
-                type="email"
+                type="email" formControlName="email" [ngClass]="{'border-2 border-red': submitted && f.email.errors && !emailFocus}" (focus)="emailFocus=true" (blur)="emailFocus=false"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Email"
               />
@@ -66,8 +82,8 @@
               >
                 Password
               </label>
-              <input
-                type="password"
+              <input formControlName="password"
+                type="password" [ngClass]="{'border-2 border-red': submitted && f.password.errors && !passwordFocus}" (focus)="passwordFocus=true" (blur)="passwordFocus=false"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Password"
               />
@@ -77,7 +93,8 @@
               <label class="inline-flex items-center cursor-pointer">
                 <input
                   id="customCheckLogin"
-                  type="checkbox"
+                  [ngClass]="{'border-2 border-red': submitted && !checkbox}"
+                  type="checkbox"[checked]="checkbox"
                   class="form-checkbox border-0 text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150 rounded"
                 />
                 <span class="ml-2 text-sm font-semibold text-blueGray-600">
@@ -90,7 +107,7 @@
             </div>
 
             <div class="text-center mt-6">
-              <button
+              <button (click)="onSubmit()"
                 class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                 type="button"
               >
