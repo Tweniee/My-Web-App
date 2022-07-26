@@ -14,5 +14,9 @@ export class RegistrationService {
     // return new promise (req,res) =>{
     return this.http.post(this.baseUrl + "add",json)
   }
+  login(email: any){
+    // return new promise (req,res) =>{
+    return this.http.post(this.baseUrl + "login" , email)
+  }
 
 }

@@ -26,18 +26,15 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.registerForm.controls; }
   onSubmit() {
-    this.submitted = true;
-
+    this.submitted = true
     // stop here if form is invalid
     if (this.registerForm.invalid && !this.checkbox) {
         return;
     }
-
     this.service.userRegister(this.registerForm.value).subscribe(data=>{
-      alert(data['data'])
+      this.submitted = false;
+      this.registerForm.reset();
     })
-    // display form values on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
 }
 }
 
