@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
+import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { RegistrationService } from "../service/registration.service";
 
 @Component({
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   emailFocus: boolean = false;
   passwordFocus: boolean = false;
   genderFocus: boolean = false;
-  constructor(private formBuilder: UntypedFormBuilder,private service: RegistrationService) {}
+  constructor(private formBuilder: UntypedFormBuilder,private service: RegistrationService,
+              private authService: SocialAuthService) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -24,6 +26,20 @@ export class RegisterComponent implements OnInit {
       password: ['',[Validators.required,Validators.minLength(6)]]
     })
   }
+
+  //Google SignIn
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+    //Social media logout
+  signOut(): void {
+    this.authService.signOut();
+  }
+
+  // signInWithFB(): void {
+  //   this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  // }
+
   get f() { return this.registerForm.controls; }
   onSubmit() {
     this.submitted = true
