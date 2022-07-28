@@ -140,6 +140,6 @@
           "defaultConfiguration": "development"
         }
       }
-    }},
-  "defaultProject": "notus-angular"
+    }
+  }
 }

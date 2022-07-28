@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { RegistrationService } from "../service/registration.service";
 
 @Component({
@@ -7,10 +7,10 @@ import { RegistrationService } from "../service/registration.service";
   templateUrl: "./login.component.html",
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   checkBox: boolean= false;
   isValidation : boolean = false;
-  constructor(public service : RegistrationService,private formBuilder: FormBuilder) {}
+  constructor(public service : RegistrationService,private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
