@@ -15,7 +15,6 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm start"
   },
   "dependencies": {
-    "@abacritt/angularx-social-login": "^1.2.1",
     "@angular/animations": "11.2.5",
     "@angular/common": "11.2.5",
     "@angular/compiler": "11.2.5",
@@ -27,10 +26,7 @@
     "@fortawesome/fontawesome-free": "5.15.3",
     "@popperjs/core": "2.9.1",
     "@tailwindcss/forms": "0.2.1",
-    "angularx-social-login": "^4.1.0",
-    "bootstrap": "^5.2.0",
     "chart.js": "2.9.4",
-    "ngx-bootstrap": "^8.0.0",
     "rxjs": "6.6.6",
     "tailwindcss": "2.0.4",
     "tslib": "2.1.0",
