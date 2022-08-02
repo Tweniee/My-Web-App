@@ -540,7 +540,7 @@ video {
      -moz-appearance: none;
           appearance: none;
   background-color: #fff;
-  border-color: #71717a;
+  border-color: #ff0000;
   border-width: 1px;
   border-radius: 0px;
   padding-top: 0.5rem;
@@ -615,7 +615,7 @@ select {
   width: 1rem;
   color: #2563eb;
   background-color: #fff;
-  border-color: #71717a;
+  border-color: #ff0000;
   border-width: 1px;
 }
 
@@ -1340,6 +1340,45 @@ select {
 .bg-red-900 {
   --tw-bg-opacity: 1;
   background-color: rgba(127, 29, 29, var(--tw-bg-opacity));
+}
+.bg-Slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: #e2e8f0
+}
+
+.bg-Slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: #cbd5e1
+}
+
+.bg-Slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: #94a3b8
+}
+
+.bg-Slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: #64748b
+}
+
+.bg-Slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: #475569
+}
+
+.bg-Slate-700 {
+  --tw-bg-opacity: 1;
+  background-color: #334155
+}
+
+.bg-Slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: #1e293b
+}
+
+.bg-Slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: #0f172a
 }
 
 .bg-gray-100 {

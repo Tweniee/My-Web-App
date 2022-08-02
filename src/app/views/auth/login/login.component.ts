@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { RegistrationService } from "../service/registration.service";
 
 @Component({
@@ -10,7 +11,8 @@ export class LoginComponent implements OnInit {
   loginForm: UntypedFormGroup;
   checkBox: boolean= false;
   isValidation : boolean = false;
-  constructor(public service : RegistrationService,private formBuilder: UntypedFormBuilder) {}
+  constructor(public service : RegistrationService,private formBuilder: UntypedFormBuilder
+              ,public router : Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.service.login(this.loginForm.value).subscribe(data=>{
       this.loginForm.reset();
       localStorage.setItem("authToken",data['token'])
+      this.router.navigateByUrl("/landing")
     })
   }
 }
