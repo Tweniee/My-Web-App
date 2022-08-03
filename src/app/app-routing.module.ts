@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AdminControllComponent } from "./components/Admin/admin-controll.component";
+import { ProductCategoryComponent } from "./components/category/product-category/product-category.component";
 
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
@@ -26,6 +28,8 @@ const routes: Routes = [
     path: "admin",
     component: AdminComponent,
     children: [
+      { path: "AddProducts",component: AdminControllComponent},
+      { path: "category", component: ProductCategoryComponent},
       { path: "dashboard", component: DashboardComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },

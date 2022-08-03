@@ -4115,3 +4115,6 @@ select {
 
 @media (min-width: 1536px) {
 }
+.min-h-screen-64 {
+    min-height: 64vh;
+}

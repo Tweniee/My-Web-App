@@ -54,11 +54,11 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import { ProductPreviewComponent } from './components/Admin/product-preview/product-preview.component';
 import { ProductFormComponent } from "./components/Admin/product form/product-form.component";
 import { AdminControllComponent } from "./components/Admin/admin-controll.component";
 import { AuthenticationGuard } from "./authentication.guard";
 import { AuthService } from "./auth.service";
+import { ProductCategoryComponent } from './components/category/product-category/product-category.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +98,7 @@ import { AuthService } from "./auth.service";
     ProfileComponent,
     AdminControllComponent,
     ProductFormComponent,
-    ProductPreviewComponent,
+    ProductCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,HttpClientModule,
             SocialLoginModule],
